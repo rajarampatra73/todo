@@ -20,7 +20,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: BlocProvider<TodoBloc>(create: (context) => TodoBloc()..add(TodoStared()),
+      theme: ThemeData(
+        colorScheme: ColorScheme.light(
+          background: Colors.blueGrey,
+          onBackground: Colors.black,
+          primary: Colors.blue,
+          onPrimary: Colors.black,
+          secondary: Colors.yellow,
+          onSecondary: Colors.white
+        )
+      ),
+      home: BlocProvider<TodoBloc>(create: (context) => TodoBloc()
+        ..add(TodoStared()),
       child: const HomeScreen(),),
 
     );
